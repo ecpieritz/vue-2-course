@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Vue mode 1 -->
+  <script src="../vue.js"></script>
+
+  <!-- Import Vue mode 2 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
+
+  <title>Testes</title>
+</head>
+<body>
+  <div id="app">
+    <p>Bermudas - R$ <span class="preco">{{preco}}</span></p>
+    <button @click="total++">Adicionar</button>
+    <button @click="total--">Remover</button>
+    <span class="total">{{total}}</span>
+    <p>Total: <span class="precoTotal">{{preco * total}}</span></p>
+  </div>
+  
+  <div id="app2">
+    <p>Camisa - R$ <span class="preco">{{preco}}</span></p>
+    <button @click="total++">Adicionar</button>
+    <button @click="total--">Remover</button>
+    <span class="total">{{total}}</span>
+    <p>Total: <span class="precoTotal">{{preco * total}}</span></p>
+  </div>
+  
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        preco: 69,
+        total: 0
+      },
+      
+    })
+    
+    const vm2 = new Vue({
+      el: '#app2',
+      data: {
+        preco: 49,
+        total: 0
+      },
+      
+    })
+  </script>
+</body>
+</html>
