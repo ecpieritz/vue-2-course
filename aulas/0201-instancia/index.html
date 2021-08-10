@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Vue mode 1 -->
+  <!-- <script src="../vue.js"></script> -->
+
+  <!-- Import Vue mode 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+  <title>Testes</title>
+</head>
+<body>
+  <div id="appClone">
+
+  </div>
+  <div id="app">
+    {{instrumento}}
+    <p>{{nomeProduto}}</p>
+
+    <!--  -->
+    
+  </div>
+  <script>
+    function VueClone(options){
+      this.options = options;
+      this.el = document.querySelector(options.el);
+      this.data = options.data;
+    }
+
+    const vmClone = new VueClone({
+      el: '#appClone',
+      data: {
+        nome: "Marta"
+      },
+    })
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        instrumento: "teclado",
+        cor: 'preto'
+      },
+      computed: {
+        nomeProduto(){
+          return `O ${this.instrumento} é ${this.cor}.`
+        }
+      }
+    })
+  </script>
+</body>
+</html>
