@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Vue mode 1 -->
+  <!-- <script src="../vue.js"></script> -->
+
+  <!-- Import Vue mode 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+  <title>Testes</title>
+</head>
+<body>
+  <div id="appClone">
+
+  </div>
+  <div id="app">
+    {{empresa}}, {{produto}}
+  </div>
+
+  <div id="app2">
+    <p>Lado = {{lado}}</p>
+    <p>Perímetro = {{lado * 4}}</p>
+    <p>Área = {{lado * lado}}</p>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        empresa: 'Apple',
+        produto: 'IPhone'
+      }
+    })
+
+    const vm2= new Vue({
+      el: '#app2',
+      data:{
+        lado: 30,
+      }
+    })
+  </script>
+</body>
+</html>
