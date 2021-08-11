@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Vue mode 1 -->
+  <!-- <script src="../vue.js"></script> -->
+
+  <!-- Import Vue mode 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <title>Testes</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{contador}}</h2>
+    <button @click="adicionar">Adicionar</button>
+    <button @click="diminuir">Diminuir</button>
+    <hr/>
+    <h2>Comprar: {{compra}}</h2>
+    <button @click="mudarCompra('Guitarra')">Guitarra</button>
+    <button @click="mudarCompra('Violão')">Violão</button>
+    <hr/>
+    <p>Preço: {{preco}}</p>
+    <button @click="adicionarCupom()">Adicionar cupom</button>
+    <p>{{alerta}}</p>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        contador: 0,
+        compra: '',
+        preco: 149,
+        alerta: ''
+      },
+      methods: {
+        adicionar(){
+          this.contador++
+        },
+        diminuir(){
+          this.contador--
+        },
+        mudarCompra(instrumento){
+          this.compra = instrumento
+        },
+        adicionarCupom(){
+          this.preco *= 0.9;
+          this.alertaCupom();
+        },
+        alertaCupom(){
+          this.alerta = "Cupom Adicionado"
+        }
+      }
+    })
+  </script>
+</body>
+</html>
