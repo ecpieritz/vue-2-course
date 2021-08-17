@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Vue mode 1 -->
+  <!-- <script src="../vue.js"></script> -->
+
+  <!-- Import Vue mode 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <style>
+
+  </style>
+
+  <title>Testes</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{mensagem}}</p>
+    <div>{{github}}</div>
+    <button @click="puxarGithub">Puxar Github</button>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        mensagem: "Essa é uma mensagem",
+        github: {},
+      },
+      methods: {
+        puxarGithub() {
+          fetch("https://api.github.com/users/ecpieritz")
+            .then(r => r.json())
+            .then(r => {
+              this.github = r;
+            })
+        }
+      },
+      beforeCreate() {
+        console.log(this.mensagem);
+      },
+      created() {
+        this.puxarGithub();
+        console.log(this.mensagem);
+        console.log("Elemento", this.$el)
+      },
+      beforeMount() {
+        console.log("BeforeMount", this.mensagem)
+        console.log("Elemento", this.$el)
+
+      },
+      mounted() {
+        console.log("Elemento", this.$el)
+      }
+    });
+  </script>
+</body>
+
+</html>
