@@ -22,7 +22,7 @@
 1. Initial information
 2. Vue.js for beginners
 3. Directives and Hooks
-4. Techno Project
+4. <a href="https://github.com/ecpieritz/techno" target="_blank">Techno Project</a>
 5. Components
 6. Animations
 7. Vue Router
