@@ -12,7 +12,7 @@
 - CSS
 - Javascript
 - Vue
-- Vue CLI
+- VueCLI
 - Vuex
 - VueRouter
 
