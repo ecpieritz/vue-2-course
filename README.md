@@ -3,7 +3,7 @@
 <h6 align = "center"> pt-Br </h6>
 
 ## 📖 About
-<p>Repository with the contents of the <a href="https://www.origamid.com/" target="_blank">Origamid</a> Vue.js 2 course classes</p>
+<p>Repository with the contents of the <a href="https://www.origamid.com/" target="_blank">Origamid</a> Vue.js 2 course classes.</p>
 
 ---
 
